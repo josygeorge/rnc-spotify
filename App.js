@@ -1,35 +1,29 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-
-import Search from "./components/Search";
+// INSTRUCTIONS:
 
 /*
-* 5. Now that you have created a basic React Native Project, and modified some basic text, let's create a component.
-* 6. in the Components folder, create a new file, called Search.js (it's been created for you)
-* 7. Fulfill the steps described in Search.js
-* 8. WHen done, come back here and add an import that will bring the Search Component into the App (this File).
-*
-*
-*
-*
-*
-*
+* 9. Now that you have implemented the basic search controller, the next step is to begin connecting Spotify to your application.
+* 10. You will be working within the API folder of this project.
+* 11. Additionally, you will work with the Search component, adding input capabilities, accepting user entries and processing them as part of 'state'
 * */
 
+import React from 'react';
+import {StyleSheet, Text, View} from 'react-native';
+import Search from "./components/Search";
+
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>React Native Creative - Spotify Player</Text>
-        <Search />
-    </View>
-  );
+    return (
+        <View style={styles.container}>
+            <Text>React Native Creative - Spotify Player</Text>
+            <Search/>
+        </View>
+    );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 });

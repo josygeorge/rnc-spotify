@@ -38,9 +38,6 @@
   },
 *
 *
-*
-*
-*
 * */
 
 // perform steps (1) and (2) here
