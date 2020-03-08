@@ -1,61 +1,52 @@
+// INSTRUCTIONS
+
 /*
 *
-* INSTRUCTIONS:
+* 18. In the render() method, add a destructured constant text that will store the value of this component's STATE.
+* 19. Replace the value of the value attribute of the text input field to bind to the text const.
+* 20. Add an onChangeText attribute to the TextInput component tag that passes the value of text to a new event handler function called handleChangeText (Created in the next step).
+* 21. In the Search component class, add the new event handler method handleChangeText, accepting text as an argument (the text from the TextInput field)
+* 22. Inside the handleChangeText event handler, create a destructured constant called onChange, and assign it a default value of this.props.
+* 23. Inside the handleChangeText event handler, set this component's state to store the value of text, and pass the value of text to the onChange const. The code is represented below.
 *
-* 1. add an import statement that will include React and Component from React
-* 2. import specific components from react-native - View, Text, TextInput, Stylesheet
-* 3. Search is a SMART component because it will be handling STATE information.
+       const {onChange} = this.props;
+
+        this.setState({
+            text,
+        }, () => {
+            onChange(text);
+        });
 *
-* - accepting a value from the user can change the state of a value used by other components
-* - classically (for now) we will use class-based syntax to make this component smart.
+* 24. In the constructor function, initially create this.state and assign it a value of an object who has a key of text, and a value of empty quotes '' .
 *
-* 4.  create a class statement code block that identifies the class called Search extending Component
-*
-* - ensure that it is the default class for this file.
-* - ensure this class is available to be used externally by marking it as exportable.
-*
-* 5. define an empty constructor function that takes in a set of values from Search's parent (called _props_) and passes it to this component's parent constructor using super();
-*
-* 6. Create this component's render method inside the class code block and make it return a View container, that contains
-*
-* - a Text field that will display the title for this component with the words "Artist Search"
-* - a TextInput field whose styles are identified in the next step
-*
-* 7. Similar to the styles constant in App.js, create a stylesheet for this component with the following details:
-*
-* text: {},
-  input: {
-    borderWidth: 1,
-    borderColor: 'grey',
-    borderRadius: 20,
-    height: 40,
-    padding: 10,
-    marginBottom: 10,
-    marginTop: 10,
-  },
-  container: {
-    backgroundcolor:'yellow'
-  },
-*
-*
+* 25. Now your component should accept input. Make sure your simulator is still running to see the steps.
 * */
 
-// perform steps (1) and (2) here
 import React, {Component} from 'react';
 
 import {View, Text, TextInput, StyleSheet} from 'react-native';
 
-// begin step (4) here
+
 export default class Search extends Component {
 
-    // begin step (5) here
+    // step (24) initializes state in the constructor
     constructor(props) {
         super(props);
     }
 
-    // begin step (6) here
+    // step (21) add a handleChangeText() event handler function, accepting text as argument
+    // step (22) adds a destructured const onChange equal to this.props
+    // step (23) add the setState to handleChangeText();
+    // handleChangeText(){}
+
+
     render() {
 
+        // perform step (18) here
+
+
+        // step (19) change the value attr of TextInput in the return statement
+        // step (20) add an onChange Attribute to TextInput
         return (
             <View style={styles.container}>
                 <Text style={styles.text}>Artist Search:</Text>
@@ -72,8 +63,6 @@ export default class Search extends Component {
 }
 // end step (4) with a closed curly brace
 
-
-// begin step (7) here
 const styles = StyleSheet.create({
     text: {},
     input: {
