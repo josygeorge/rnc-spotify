@@ -8,10 +8,6 @@ import { StyleSheet, Text, View } from 'react-native';
 * 8.
 * 9.
 * 10.
-*
-*
-*
-*
 * */
 export default function App() {
   return (
