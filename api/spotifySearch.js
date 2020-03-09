@@ -21,7 +21,7 @@ export default async ({offset, limit, q, token,}) => {
         return [];
     }
 
-    const { tracks: {items, } } = jsonObj;
+    const { tracks: {items } } = jsonObj;
 
     return items.map(item => ({
         id: item.id,

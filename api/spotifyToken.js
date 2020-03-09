@@ -30,13 +30,12 @@ import {decode as atob, encode as btoa} from 'base-64'
 const apiPrefix = 'https://accounts.spotify.com/api';
 
 // DO NOT FORGET TO INPUT YOUR CLIENTID AND CLIENT SECRET HERE
-const clientId = '';
-const clientSecret = '';
+const clientId = '3dd1ad76687b4c359fa4b5314b84c5a3';
+const clientSecret = 'f2036e521df74e008a706b0b211a4f2a';
 
 
 // step (4) here
 const base64Cred = btoa(`${clientId}:${clientSecret}`);
-
 console.log('base64 cred = ' + base64Cred);
 
 
