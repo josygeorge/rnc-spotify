@@ -3,10 +3,9 @@
 * 1. Set the text: style to have a marginTop and marginBottom of 10.
 * 2. Add a placeholder attribute with a value of "search for" for the TextInput component tag.
 * 3. Note text in the onChangeText handler was replaced with newText to make it easier to follow the values.
-* 4. Return to App.js,  step 57
+* 4. Return to App.js, step 57
 * 5. Assuming you did step 4 above, add onChange && onChange(newText); so that it doesn't call every single time.
-* 6. Proceed to work on the file StatelessListComponent.js
-*
+* 6. Proceed to work on the file StatelessListComponent.js. Open that file.
 *
 * */
 
@@ -34,7 +33,6 @@ export default class Search extends Component {
             text: newText,
         }, () => {
             // step (5) here
-            onChange && onChange(newText);
         });
     }
 
@@ -49,7 +47,6 @@ export default class Search extends Component {
                 <TextInput
                     style={styles.input}
                     value={text}
-                    placeholder="Search for..."
                     onChangeText={newText => this.handleChangeText(newText)}
                 />
             </View>
@@ -74,8 +71,6 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         height: 40,
         padding: 10,
-        marginBottom: 10,
-        marginTop: 10,
     },
     container: {
         backgroundColor: 'yellow',

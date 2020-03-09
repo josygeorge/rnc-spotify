@@ -143,7 +143,7 @@ export default class App extends Component {
 
     handleSearchChange(text){
         // step (59) here
-        console.log('the value to search is ', text);
+
         this.setState({
             query: text,
             items: [],
@@ -177,13 +177,13 @@ export default class App extends Component {
     }
 }
 
-// start step (57) here
+// start step (57) and (58) here
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        alignItems: 'stretch',
-        justifyContent: 'flex-start',
+        alignItems: 'center',
+        justifyContent: 'center',
         margin: 10,
         marginTop: 50,
     },

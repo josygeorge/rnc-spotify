@@ -12,12 +12,11 @@
 *   - data  holds the value { items }
 *   - renderItem stores an ES6 function that take each object - call it info, and display's the item's title property in between open and closed< Text> component tags (as info.item.title)
     - { (info) => <Text> The song info - {info.item.title}</Text> }
-*
-*   - add a keyExtractor attribute that will be used to store the id of item
+    - add a keyExtractor attribute that will be used to store the id of item, converted to a string
     - keyExtractor={ (item,index) => item.id.toString() }
     - add an onReached attribute and make it equal to the onEndReached argument defined in step three
-*
-*   keyExtractor value that stores the item.id from item in a function
+
+
 * 5. Now let's test integrate this component with mock data. Return to App.js, step 61.
 * 6. After you connected some mock data , let's proceed to create a formal Item renderer. Open up Item.js from there and proceed with the instructions (in components folder). WHen you are done, come back here and proceed with step 7.
 * 7. Add an import that imports your item component created in step 6.
@@ -34,13 +33,13 @@
 import React, { Component } from 'react';
 
 // step (1) here
-import { FlatList, View, Text } from 'react-native';
+
 
 // step (7) here. import your item renderer
-import Item from "./Item";
+
 
 // step (11) here. import the pre-built separator component.
-import Separator from "./Separator";
+
 
 // step (2)
 // export default (// step (3) add an argument here ) => (
@@ -53,17 +52,3 @@ import Separator from "./Separator";
 // you will add the separator attribute for the FlatList component at the end (step 11)
 // );
 
-
-
-
-export default ({ items , onEndReached }) => (
-    <View>
-    <FlatList data={items}
-              renderItem={ (info) =>  <Item item={info.item} /> }
-              listEmptyComponent = { f => f }
-              ItemSeparatorComponent={() => <Separator />}
-              keyExtractor={ (item,index) => item.id.toString() }
-              onEndReached={ onEndReached }
-            />
-    </View>
-);
