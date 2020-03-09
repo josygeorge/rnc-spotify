@@ -20,9 +20,42 @@
 *
 * 17. Then go proceed to follow the steps inside Search.js
 *
+* ... ONCE YOU WORK ON AND COMPLETE THE MOCKSEARCH FILE...
+*
+*  33. Add an import below to import mockSearch.js
+*  34. Add a react native lifecycle Event - componentDidMount() underneath constructor
+*
+*  async ComponentDidMount() {}
+*
+*  35. in componentDidMount, await for the response and call a new method called loadNextPage()
+*  36. Create an -async- method called loadNextPage() in the class.
+*  37. create a const newItems in the loadNextPage() event that will retrive the data from mockSearch
 
+         const newItems = await mockSearch({
+            offset: this.state.offset,
+            limit: PAGE,
+            q: this.state.query,
+            token: this.state.token,
+        });
+
+* *  Later, you will be replacing mockSearch with Search.
 *
+* 38. Now you are going to add STATE to this function. in the constructor, add
 *
+    this.state = {}
+*
+* 39. then populate the following key / value pairs for state
+*  - items: an empty array
+*  - offset : 0
+*  - isFetching: false
+*  - query: 'Led Zeppelin'
+*  - token: null
+*
+* Hypothesize to yourself - what do you think these values represent?
+*
+* 30. add a const PAGE and set it to a value of 20 (under the import statements)
+*
+* 31. TEST! run the simulator, and confirm that you get the results shown in the file ./api/sample.returnedArr.txt (from within the console!)
 *
 * */
 
@@ -32,12 +65,47 @@ import {StyleSheet, Text, View} from 'react-native';
 
 import Search from './components/Search';
 
+// add import of mockSearch described in step (33);
+import mockSearch from "./api/mockSearch";
+
+// step (40) - add a constant called PAGE, displaying results
+const PAGE = 20;
+
 // step (12) convert the App 'dumb component' function to a 'smart component' using class syntax.
 export default class App extends Component {
 
     // add step (13) here - adding constructor
+    // Much later, add the state as described in steps (38), (39)
     constructor(props) {
         super(props);
+        this.state = {
+            items: [],
+            offset: 0,
+            isFetching: false,
+            query: 'Led Zeppelin',
+            token: null,
+        };
+
+    }
+
+    //  step (34) add componentDidMount();
+    //  step (35) add call a new method in -this- class called loadNextPage();
+    async componentDidMount() {
+        await this.loadNextPage();
+    }
+
+    // step (36) add loadNextPage() method
+    // step (37) add newItems const
+    async loadNextPage() {
+
+        const newItems = await mockSearch({
+            offset: this.state.offset,
+            limit: PAGE,
+            q: this.state.query,
+            token: this.state.token,
+        });
+
+        console.log(newItems);
     }
 
     // add step (14) here - adding handleSearchChange(event)
