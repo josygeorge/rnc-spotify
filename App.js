@@ -19,7 +19,7 @@
     const newSongs = await mockSearch({
       offset: 0,
       limit: 100,
-      q: 'Testing',
+      q: 'Led Zeppelin',
     });
 
     this.setState({
@@ -55,7 +55,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import Search from './components/Search';
 
 // step (62) here
-import mockSearch from "./api/mockSearch";
+// import mockSearch from "./api/mockSearch";
 
 import spotifyToken from "./api/spotifyToken";
 import spotifySearch from "./api/spotifySearch";
@@ -72,13 +72,8 @@ export default class App extends Component {
         super(props);
 
         // step (64) below.
-        this.state = {
-            songs: [],
-            offset: 0,
-            isFetching: false,
-        };
 
-        /*
+
         this.state = {
             items: [],
             offset: 0,
@@ -86,7 +81,6 @@ export default class App extends Component {
             query: 'Led Zeppelin',
             token: null,
         };
-         */
 
     }
 
@@ -95,20 +89,8 @@ export default class App extends Component {
 
     async componentDidMount() {
         // step (65) - create a mock query for now.
-        const newSongs = await mockSearch({
-            offset: 0,
-            limit: 20,
-            q: 'Van Halen',
-        });
 
-        console.log('in componentDidMount(): the new songs returned is/are \n', newSongs);
-
-        this.setState({
-            songs: newSongs,
-            isFetching:true,
-        });
-
-        // await this.refreshToken();
+        await this.refreshToken();
         await this.loadNextPage();
     }
 
@@ -128,12 +110,13 @@ export default class App extends Component {
 
         this.setState({ isFetching: true });
 
-        const newItems = await mockSearch({
+        const newItems = await spotifySearch({
             offset: this.state.offset,
             limit: PAGE,
             q: this.state.query,
             token: this.state.token,
         });
+
         console.log('the items returned are \n' , newItems);
         console.log('Search completed.');
 
@@ -154,9 +137,6 @@ export default class App extends Component {
     }
 
     // step (70) goes here, adding a handleEndReached() method
-    handleEndReached() {
-        this.loadNextPage();
-    }
 
     render() {
         // step 66
