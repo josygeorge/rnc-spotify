@@ -61,7 +61,7 @@ import spotifyToken from "./api/spotifyToken";
 import spotifySearch from "./api/spotifySearch";
 
 // step (61) here
-import StatelessListComponent from "./components/StatelessListComponent";
+
 
 
 const PAGE = 20;
@@ -169,8 +169,6 @@ export default class App extends Component {
                 <View style={styles.container}>
                     <Text>React Native Creative - Spotify Player</Text>
                     <Search onChange={text => this.handleSearchChange(text)} />
-                {(this.isFetching === false && songs.length>0)?null:<StatelessListComponent
-                        items={songs} onEndReached={ () => this.handleEndReached() } />}
                 </View>
             );
 
