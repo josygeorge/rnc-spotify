@@ -53,7 +53,7 @@
 *
 * Hypothesize to yourself - what do you think these values represent?
 *
-* 30. add a const PAGE and set it to a value of 20 (under the import statements)
+* 40. add a const PAGE and set it to a value of 20 (under the import statements)
 *
 * 31. TEST! run the simulator, and confirm that you get the results shown in the file ./api/sample.returnedArr.txt (from within the console!)
 *

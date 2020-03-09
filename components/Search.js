@@ -5,7 +5,7 @@
 * 20. Add an onChangeText attribute to the TextInput component tag that passes the value of text to a new event handler function called handleChangeText (Created in the next step).
 * 21. In the Search component class, add the new event handler method handleChangeText, accepting text as an argument (the text from the TextInput field)
 * 22. Inside the handleChangeText event handler, create a destructured constant called onChange, and assign it a default value of this.props.
-* 23. set this component's state tp stpre the value of text, and pass the value of text to the onChange const. The code is represented below.
+* 23. set this component's state to store the value of text, and pass the value of text to the onChange const. The code is represented below.
 *
        const {onChange} = this.props;
 
@@ -20,8 +20,6 @@
 * 25. Now your component should accept input.
 *
 * 26. Now let's create a mockup for searching. create a file called mockSearch.js in the API folder and open that file for editing. Proceed to the instructions found in that file to set i up.
-*
-*
 *
 * */
 
@@ -45,7 +43,7 @@ export default class Search extends Component {
 
     // step (21) add a handleChangeText() event handler function, accepting text as argument
     // step (22) adds a destructured const onChange equal to this.props
-
+    // step (23) add the setState to handleChangeText();
     handleChangeText(text){
         const {onChange} = this.props;
 

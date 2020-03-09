@@ -15,22 +15,26 @@
 *  export default async() ==> {}
 *
 *
-* 29. Fill in the following argument for the async() method
+*  29. Fill in the following argument for the async() method
 *
-* { offset, limit, q, }
-*
-* 30. Inside the async function block {}
+
+{ offset, limit, q, }
+
+* *
+*  30. Inside the async function block {}
 * - add an await statement that invokes a 300 ms timeout
 * - console log the value of q (for testing)
 * - create a map function that takes item i as input, and in that function with song and title
 * attributes, as well as the sample image (defined as sampleImage)
 *
-* let mapFunc = i => ({ id: i + offset, title: `Song ${q} ${i + offset}`, sampleImage });
-*
+let mapFunc = i => ({ id: i + offset, title: `Song ${q} ${i + offset}`, sampleImage });
+
+* *
 *  31. add the return statement , and "describe what it does"
 *
-* return [...Array(limit).keys()].map(mapFunc);
-*
+return [...Array(limit).keys()].map(mapFunc);
+
+* *
 * review - https://stackoverflow.com/questions/42964102/syntax-for-async-arrow-function for syntax discussion of async()
 *
 *
