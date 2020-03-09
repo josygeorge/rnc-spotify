@@ -2,69 +2,29 @@
 
 // Keep the mobile simulator running if your machine allows it so that you can immediately see changes
 
-
 /*
-* 73. Comment out the mockSearch import. Uncomment out the spotify component
-* 74. replace state in the constructor() with the following:
-
-
-            this.state = {
-            items: [],
-            offset: 0,
-            isFetching: false,
-            query: 'Led Zeppelin',
-            token: null,
-        };
+* 81. import ActivityIndicator from react-native
 *
-* 75. Remove the following from ComponentDidMount()
-
-        const newSongs = await mockSearch({
-            offset: 0,
-            limit: 20,
-            q: 'Van Halen',
-        });
-
-        console.log('in componentDidMount(): the new songs returned is/are \n', newSongs);
-
-       this.setState({
-            songs: newSongs,
-            isFetching:true,
-          });
-
-*  76. Uncomment await this.refreshToken(); in componentDidMount()
-*  77. in loadNextPage() method. replace mockSearch with spotifySearch
-*  78. In the render() method, replace
-    - const { songs } = this.state; // with
-    - const { items, isFetching } = this.state;
-*  79. Update the value of the items attribute for the StatelessListComponent and also adjust the logic as follows:
-
-{
-    (isFetching && items.length === 0)?null:
-        <StatelessListComponent items={items} onEndReached={ () => this.handleEndReached() } />
-}
-
-* 80. Test and ensure that the app now runs, pulling Led Zeppelin data from Spotify
+* import {StyleSheet, Text, View, ActivityIndicator} from 'react-native';
 *
+* 82. Change the value null value in the unary if...else statement that shows the StatelessListComponent with an instance of <ActivityIndicator />
 *
-*
-*
-*
-*
+* 83. Test The Search Functionality (should be active). Enter in Values in the field and see if the results begin to change.
 *
 * */
 
 import React, {Component} from 'react';
 
+// step (81) here
 import {StyleSheet, Text, View} from 'react-native';
 
 import Search from './components/Search';
 
-// step (73) here
+
 // import mockSearch from "./api/mockSearch";
 
 import spotifyToken from "./api/spotifyToken";
 
-// step (73) also here
 import spotifySearch from "./api/spotifySearch";
 
 import StatelessListComponent from "./components/StatelessListComponent";
@@ -150,8 +110,8 @@ export default class App extends Component {
     render() {
 
         const { items, isFetching } = this.state;
-        console.log('isFetching', isFetching);
 
+        // step (82) here
             return (
                 <View style={styles.container}>
                     <Text>React Native Creative - Spotify Player</Text>
