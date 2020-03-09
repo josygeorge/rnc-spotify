@@ -20,6 +20,7 @@
 * 24. In the constructor function, initially create this.state and assign it a value of an object who has a key of text, and a value of empty quotes '' .
 *
 * 25. Now your component should accept input. Make sure your simulator is still running to see the steps.
+* 26. Now let's create a mockup for searching. Open the file called mockSearch.js in the API folder and open that file for editing. Proceed to the instructions found in that file to set it up.
 * */
 
 import React, {Component} from 'react';
