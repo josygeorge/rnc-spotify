@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Search from './components/Search'
 
 /*
 * 5. Now that you have created a basic React Native Project, and modified some basic text, let's create a component.
@@ -13,6 +14,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>React Native Creative - Spotify Player</Text>
+        <Search></Search>
     </View>
   );
 }
