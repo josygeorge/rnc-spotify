@@ -4,8 +4,7 @@
 *
 * 1. add an import statement that will include React and Component from React
 * 2. import specific components from react-native - View, Text, TextInput, Stylesheet
-* 3. Search is a SMART component because it will be handling STATE information.
-*
+* 3. Search is a SMART component because it will be handling STATE information. Use class syntax to create this component.
 * - accepting a value from the user can change the state of a value used by other components
 * - classically (for now) we will use class-based syntax to make this component smart.
 *
